@@ -1,0 +1,246 @@
+:root {
+    --white: #FFFFFF;
+    --black: #212121;
+    --primary: #ffc107;
+    --secondary: #0097a7;
+    --gray: #757575;
+
+    --main-font: 3.8rem; 
+
+}
+
+
+
+
+
+
+
+
+
+
+html {
+    font-size: 62.5%; /*This other line is to hack the rems */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /*border-box box sizing */
+}
+
+body{
+    font-size: 16px; /*this line is to "hack the rems"  1 rem = 10px*/
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--white) 100%);    /*This line is to add the color of the background*/
+/*  */
+
+}
+
+.shadow { /*This code create the shado for the main, that box with the blur is generated here */
+    -webkit-box-shadow: 6px 7px 17px 0px rgba(189,174,189,0.48);
+    -moz-box-shadow: 6px 7px 17px 0px rgba(189,174,189,0.48);
+    box-shadow: 6px 7px 17px 0px rgba(189,174,189,0.48);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem ;
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.header1 { 
+    text-align: center;
+
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold; /*all headings include by default bold, is not necessary to explicitly override */
+
+}
+
+span{
+    font-size: 2rem;
+
+}
+
+.nav-bg{
+
+    background-color: var(--secondary);
+}
+
+
+.button {
+    background-color: var(--secondary); /* sets the background color  of the button */
+    color: var(--white); /* sets the font color */
+    padding: 1rem 3rem; /* sets the padding 1 rem top 1 rem bottom 3 rem for sides */
+    font-size: 2rem; /* sets the font size to 2rem */
+    text-decoration: none; 
+    text-transform: uppercase; /* all uppercase */
+    font-weight: bold; /* sets the font weight */
+    border-radius: 0.5rem; /* sets the border radius */
+    width: 90%; /* set to 90 bcz will add a mq to get it responsive */
+    text-align: center; /*center the txt  */
+}
+
+@media (min-width: 480px) { /* resize the button for larger screens */
+    .button{
+        width: auto; /* auto resets the value given before it's like ignoring it */
+    } 
+     
+}
+.container{
+    max-width: 120rem; /* for some reason this code centers the main content */
+    margin: 0 auto;
+}
+
+
+
+.main-nav{ 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@media (min-width: 768px) {  /* From 768 to higher */   
+    .main-nav{ 
+        flex-direction: row;
+        justify-content: space-between;
+    }
+     
+}
+
+
+.main-nav a {
+
+    text-decoration: none;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.main-nav a:hover{
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+
+.hero{
+    background-image: url(Resources/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem; 
+    position: relative;
+    margin-bottom: 2rem; /* separation between the image and the main content */
+
+}
+ 
+
+.heroContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+
+    /* Este codigo alinea vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroContainer h2,
+.heroContainer p {
+    color: var(--white);
+
+}
+.ubicacion{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Services */
+
+@media (min-width: 768px) { 
+    .services{
+        /* displays always apply to the parent, that means, the elent that contains the elements that we need
+        to display, for example this case, where I need to fix the position of the services, I apply the display 
+        grid to the container where they are in */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* repeat 3 times 1fr */
+        column-gap: 1rem; /* margins between grid elements */
+    
+    } 
+}
+
+.service {
+
+    /*Since this is the parent of the icons, we need to center the circles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.service h3 {
+    color: var(--secondary); /* change color of the titles */
+}
+
+.service p {
+    line-height: 2; /* space between lines in a paragraph */
+}
+
+.service .iconos {
+    /* this code sets the space between the icons and the paragraph    */
+    height: 15rem; 
+    width: 15rem;
+    /* this created like a sqare that surrounds the icons */
+    background-color: var(--primary);
+    border-radius: 50%; /* converts the square into a circle */
+    border: 1px solid var(--primary); /* adds a thin border line */
+
+    /* This code centers the icons, in the above circle */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* CSS for the contact  */
+
+.form {
+    background-color: var(--gray);
+    width: min(60rem, 100%); /* Uses the min value, the lower value between 60 rem or 100% */
+    margin: 0 auto; /* margin 0 auto centers, when the parent component is not a display flex */
+    padding: 2rem;
+    border-radius: 2rem;
+
+}
+
+.form fieldset {
+    border: none; /*fieldset includes an ugly line, this deletes it */
+}
+
+.form legend {
+    text-align: center;
+    font-size: 1,9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
