@@ -22,7 +22,8 @@ html {
     font-size: 62.5%; /*This other line is to hack the rems */
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box; /*border-box box sizing */
-}
+    scroll-snap-type: y mandatory; /* scroll effect */
+}   
 
 body{
     font-size: 16px; /*this line is to "hack the rems"  1 rem = 10px*/
@@ -91,6 +92,11 @@ span{
     border-radius: 0.5rem; /* sets the border radius */
     width: 90%; /* set to 90 bcz will add a mq to get it responsive */
     text-align: center; /*center the txt  */
+    border: none; /* since this code will be used for the "Submit" button   */
+}
+
+.button:hover { /* sets the effect of the little hand for buttons */
+    cursor: pointer;
 }
 
 @media (min-width: 480px) { /* resize the button for larger screens */
@@ -175,6 +181,13 @@ span{
 
 /* Services */
 
+.services, /* scroll snap effect, these are the fields where the the scroll snap will stop */
+.main-nav,
+.form {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
 @media (min-width: 768px) { 
     .services{
         /* displays always apply to the parent, that means, the elent that contains the elements that we need
@@ -186,6 +199,8 @@ span{
     
     } 
 }
+
+
 
 .service {
 
@@ -243,4 +258,68 @@ span{
     font-weight: 700;
     margin-bottom: 2rem;
     color: var(--primary);
+}
+
+
+
+@media (min-width: 768px) { 
+    .fieldsetContainer{
+        display: grid; /* grid to allign items in the fieldset  name and phone together*/
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem; /* resize the rows, there are 3 rows*/
+        column-gap: 1rem;
+}
+    .fields:nth-child(3){ /* nth starts counting 1, this is a selector to expand the email alone in the grid */
+        grid-column: 1 / 3; /*fix in column */
+
+    }
+
+    .fields:nth-child(4){
+        grid-column: 1 /3;
+    }
+}
+.fields {
+    margin-bottom: 1rem; /*space between fields */
+
+}
+
+.fields label {
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* add separation between the label and the input */
+    display: block; /*this makes that the elements will take all sthe space available */
+
+}
+
+.fields-input { /* from fields, select the input type text only */
+    width: 100%; /* takes the 100% of the space available */
+    border: none; /* all inputs have a default ugly border */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    
+    
+}
+
+.send {
+    width: 100%;
+}
+
+@media (min-width: 480px) { /* adjust the button smaller for larger screens */
+    .button{
+        width: auto;
+        display: flex;
+        justify-self: start;
+    }
+    
+     
+}
+
+
+.fields textarea { /* re size the text area of the form */
+    height: 15rem;
+}
+
+.footer { 
+    text-align: center;
 }
