@@ -1,0 +1,1 @@
+This is an HTML and CSS practice, the site has been deployed here: https://admiring-nobel-07905c.netlify.app/
