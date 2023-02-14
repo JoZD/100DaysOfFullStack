@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="CSS/normalize.css"> <!--Normalize before anything else -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Front End Store</title>
+</head>
+    <body>
+            <header class="header"> <!-- For BEM this would be a block -->
+
+                <a href="index.html">
+                    <img class="header__img" src="img/logo.png" alt="Logo of the company">
+                </a>
+            </header>
+            
+            <nav class="mainNav"> <!-- For BEM this would be a block -->
+                <a class="mainNav__link mainNav__link--colorEffect" href="index.html">Store</a>
+                <a class="mainNav__link" href="about.html">About Us</a>
+            </nav>
+
+            <main class="container">
+                <h1>ReactJS</h1>
+
+                <div class="camisa">
+
+                    <img src="img/3.jpg" alt="Image of reactJS shirt" class="camisa__imagen">
+
+                    <div class="camisa__content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum recusandae quaerat a facere? Dolor commodi blanditiis cupiditate error voluptatem, repellendus, sequi, iure quidem asperiores iste ut ipsa necessitatibus repellat perspiciatis.</p>
+                    
+                    
+                        <form class="form">
+                            <select class="form__field" name="" id="">
+                                <option disabled selected> -- Select Size --</option> <!-- this is the option that's show by default -->
+                                <option value=""> S</option>
+                                <option value="">M</option>
+                                <option value="">XL</option>
+                            </select>
+
+                            <input class="form__field"  type="number" min="1"> <!-- only numbers are allowed, and the min value is 1  -->
+                            <input class="form__submit" type="submit" value="Add To Cart">
+
+                        </form>
+                    
+                    
+                    </div>
+
+                </div>
+
+            </main>
+
+            <footer class="footer">
+                <p class="footer__text">Front-End Store All Rights Reserved <i>-byDraster</i> 2023</p>
+            </footer>
+
+
+
+ 
+        
+    </body>
+</html>
